@@ -1,4 +1,4 @@
-CGFlib/lib/
+CGFlib/lib/*
 CGFexample/bin/
 CGFexample/lib/
 buildtemp/
