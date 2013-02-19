@@ -9,8 +9,11 @@
 
 #include "CGFobject.h"
 #include "CGFappearance.h"
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
-
+#endif
 
 class CGFlight: public CGFobject 
 /// The light class is used to initialise, store information and generally handle an _OpenGL_ _GLlight_. It may also draw a sphere to represent the light on the 3D scene.

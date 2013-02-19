@@ -6,8 +6,12 @@
 
 #ifndef CGF_NO_SHADERS
 #include <GL/glew.h>
-#include <GL/gl.h>
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 
 #include "CGFapplication.h"
 

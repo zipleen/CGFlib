@@ -8,7 +8,11 @@
  */
 
 #include <stdlib.h>
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 
 class CGFobject 
 /// This class should be used as a base class for all the objects within a CGFscene, by reimplementation of its draw() method.

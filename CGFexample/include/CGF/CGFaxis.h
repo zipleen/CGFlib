@@ -9,7 +9,11 @@
  */
 
 #include "CGFobject.h"
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 
 #define CG_CGFaxis_DEFAULT_RADBEG 0.1
 #define CG_CGFaxis_DEFAULT_RADEND 0.0
