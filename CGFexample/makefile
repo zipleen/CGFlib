@@ -20,7 +20,7 @@ UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
 LIBS = -Llib -L/usr/local/lib -L/usr/lib  -lCGF -lm -lglut -lglui -lGL -lGLU -lGLEW
 else
-LIBS = -Llib -L/usr/local/lib -L/usr/lib  -lCGF -lm -lglui -lGLEW -framework opengl -framework glut -framework coreservices 
+LIBS = -Llib -L/usr/local/lib -L/usr/lib  -lCGF -lm -lglui -lGLEW -framework opengl -framework glut  
 endif
 
 # compile flags

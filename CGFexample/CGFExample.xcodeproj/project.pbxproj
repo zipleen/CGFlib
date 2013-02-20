@@ -11,7 +11,6 @@
 		AA63E1BD16D41568003287C6 /* ExampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA63E1B916D41568003287C6 /* ExampleObject.cpp */; };
 		AA63E1BE16D41568003287C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA63E1BB16D41568003287C6 /* main.cpp */; };
 		AA63E1CF16D415BF003287C6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E1CE16D415BF003287C6 /* OpenGL.framework */; };
-		AA63E1D116D415C6003287C6 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E1D016D415C6003287C6 /* CoreServices.framework */; };
 		AA63E1D316D415CB003287C6 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E1D216D415CB003287C6 /* GLUT.framework */; };
 		AA63E22E16D421B5003287C6 /* libCGF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E22D16D421B5003287C6 /* libCGF.a */; };
 		AA63E23216D4221C003287C6 /* libGLEW.1.9.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E22F16D4221C003287C6 /* libGLEW.1.9.0.dylib */; };
@@ -79,7 +78,6 @@
 				AA63E23416D4221C003287C6 /* libglui.a in Frameworks */,
 				AA63E22E16D421B5003287C6 /* libCGF.a in Frameworks */,
 				AA63E1D316D415CB003287C6 /* GLUT.framework in Frameworks */,
-				AA63E1D116D415C6003287C6 /* CoreServices.framework in Frameworks */,
 				AA63E1CF16D415BF003287C6 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

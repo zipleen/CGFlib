@@ -4,10 +4,6 @@
 #include "CGFapplication.h"
 #ifdef __APPLE__
 #include <GLUT/glut.h>
-#include <assert.h>
-#include <CoreServices/CoreServices.h>
-#include <mach/mach.h>
-#include <mach/mach_time.h>
 #include <unistd.h>
 #else
 #include <GL/glut.h>
@@ -36,6 +32,10 @@ using namespace std;
 #define CG_GLAPP_BLUEBITS 8
 #define CG_GLAPP_GREENBITS 8
 
+#if __APPLE__
+struct timeval time_start;
+#endif
+
 int CGFapplication::app_window = 0;
 
 float CGFapplication::xy_aspect = 0;
@@ -59,7 +59,10 @@ CGFapplication::CGFapplication() {
 	idstr[strlen(idstr)-1]=0;
 
 	printf("CGF (Computer Graphics @ FEUP) library %s %s\n",(CGFVersion[0]=='$')?"":CGFVersion, idstr);
-
+#if __APPLE__
+    gettimeofday(&time_start, NULL);
+#endif
+    
 	CGFapplication::app_window = NULL;
 	CGFapplication::app_scene = NULL;
 	app_interface = NULL;
@@ -222,45 +225,15 @@ unsigned long CGFapplication::getTime() {
 	#ifdef _WIN32
 		return GetTickCount();
 	#elif __APPLE__
-	uint64_t        start;
-    uint64_t        end;
-    uint64_t        elapsed;
-    Nanoseconds     elapsedNano;
-
-    // Start the clock.
-
-    start = mach_absolute_time();
-
-    // Call getpid. This will produce inaccurate results because 
-    // we're only making a single system call. For more accurate 
-    // results you should call getpid multiple times and average 
-    // the results.
-
-    (void) getpid();
-
-    // Stop the clock.
-
-    end = mach_absolute_time();
-
-    // Calculate the duration.
-
-    elapsed = end - start;
-
-    // Convert to nanoseconds.
-
-    // Have to do some pointer fun because AbsoluteToNanoseconds 
-    // works in terms of UnsignedWide, which is a structure rather 
-    // than a proper 64-bit integer.
-
-    elapsedNano = AbsoluteToNanoseconds( *(AbsoluteTime *) &elapsed );
-
-    return * (unsigned long *) &elapsedNano;
-	#else
-		// glutGet(GLUT_ELAPSED_TIME) was deprecated due to potential to overflow
-		struct timespec stime;
-		clock_gettime(CLOCK_MONOTONIC, &stime);
-
-		return ((stime.tv_sec) * 1000 + stime.tv_nsec/1000000);
+        struct timeval time_now;
+        gettimeofday(&time_now, NULL);
+        return (time_now.tv_sec - time_start.tv_sec ) * 1000 + (time_now.tv_usec / 1000 ) ;
+    #else
+        // glutGet(GLUT_ELAPSED_TIME) was deprecated due to potential to overflow
+        struct timespec stime;
+        clock_gettime(CLOCK_MONOTONIC, &stime);
+    
+        return ((stime.tv_sec) * 1000 + stime.tv_nsec/1000000); 
 	#endif
 }
 

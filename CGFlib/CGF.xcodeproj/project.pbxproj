@@ -34,7 +34,6 @@
 		AA63E21716D4167B003287C6 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = AA63E20B16D4167B003287C6 /* stb_image.c */; };
 		AA63E21916D41735003287C6 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E21816D41735003287C6 /* GLUT.framework */; };
 		AA63E21B16D4173B003287C6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E21A16D4173B003287C6 /* OpenGL.framework */; };
-		AA63E21D16D41741003287C6 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E21C16D41741003287C6 /* CoreServices.framework */; };
 		AA63E22016D4175A003287C6 /* libGLEW.1.9.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E21E16D4175A003287C6 /* libGLEW.1.9.0.dylib */; };
 		AA63E22116D4175A003287C6 /* libGLEWmx.1.9.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63E21F16D4175A003287C6 /* libGLEWmx.1.9.0.dylib */; };
 		AA63E22C16D42159003287C6 /* libCGF.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA63E1DD16D41616003287C6 /* libCGF.a */; };
@@ -94,7 +93,6 @@
 			files = (
 				AA63E22016D4175A003287C6 /* libGLEW.1.9.0.dylib in Frameworks */,
 				AA63E22116D4175A003287C6 /* libGLEWmx.1.9.0.dylib in Frameworks */,
-				AA63E21D16D41741003287C6 /* CoreServices.framework in Frameworks */,
 				AA63E21B16D4173B003287C6 /* OpenGL.framework in Frameworks */,
 				AA63E21916D41735003287C6 /* GLUT.framework in Frameworks */,
 			);
